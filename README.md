@@ -58,7 +58,9 @@ CMD ["python","app.py"]
 Bulit imgae and run
 
 cd covid19
+
 sudo docker build . --tag=cityweather:v4
+
 sudo docker run -p 8080:8080 cityweather:v4
 
 # REST api requests
