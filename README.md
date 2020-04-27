@@ -38,4 +38,27 @@ cleaning up
 Delete the load-balancing service:
 
 sudo microk8s.kubectl delete service cityweather-web
+# serving the app
+
+Creat requirments.txt
+
+pip
+Flask
+cassandra-driver
+requests
+requests_cache
+Create the Dockerfile.
+
+FROM python:3.7-alpine
+WORKDIR /myapp
+COPY . /myapp
+RUN pip install -U -r requirements.txt
+EXPOSE 8080
+CMD ["python","app.py"]
+Bulit imgae and run
+
+cd covid19
+sudo docker build . --tag=cityweather:v4
+sudo docker run -p 8080:8080 cityweather:v4
+
 # REST api requests
