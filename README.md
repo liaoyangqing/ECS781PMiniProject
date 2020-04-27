@@ -4,6 +4,8 @@ MetaWeather is an automated weather data aggregator that takes the weather predi
 
 # set up
 
+CREATE KEYSPACE cityweather WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor' : 1};
 
+CREATE TABLE cityweather (city text PRIMARY KEY,date text, weather text);
 
 # REST api requests
