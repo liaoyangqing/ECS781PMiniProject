@@ -2,11 +2,16 @@
 mini project of cloud computing
 MetaWeather is an automated weather data aggregator that takes the weather predictions from various forecasters and calculates the most likely outcome.(https://www.metaweather.com)
 
-# set up
+# preparation
+sudo apt update
+
+sudo apt install docker.io
+
+sudo docker pull cassandra:latest
 
 CREATE KEYSPACE cityweather WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor' : 1};
 
-CREATE TABLE cityweather.globe (city text PRIMARY KEY,date text, weather text);
+CREATE TABLE cityweather.globe(city varchar PRIMARY KEY,date varchar, weather varchar);
 
 # Kubernetes based load balancing
 Install Kubernetes
