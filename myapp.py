@@ -4,6 +4,7 @@ from cassandra.cluster import Cluster
 import requests
 import requests_cache
 
+#use your ip and port of your cassandra
 cluster = Cluster(contact_points=['172.17.0.2'], port=9042)
 
 session = cluster.connect()
