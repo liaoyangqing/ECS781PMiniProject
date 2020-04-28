@@ -44,7 +44,7 @@ or use browser visit https://localhost:8000/
 ```
 curl -i -H "Content-Type: application/json" -X GET -d '{"query":"city_name"}' http://localhost:8080/api/location/search/?query={query}
 ```
-
+or visit http://localhost:8080/api/get_weather_by_city?query=cityname
 
 
 
