@@ -1,4 +1,6 @@
-# ECS781PMiniProject (get today's weather of the city )
+# ECS781P MiniProject 
+
+# get weather today of globe cities
 This is the mini project of cloud computing.
 
 This project used MetaWeather, which is an automated weather data aggregator that takes the weather predictions from various forecasters and calculates the most likely outcome.(see more at https://www.metaweather.com)
