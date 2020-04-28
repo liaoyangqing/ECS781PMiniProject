@@ -47,8 +47,10 @@ curl -i -H "Content-Type: application/json" -X GET -d '{"query":"city_name"}' ht
 or visit http://localhost:8080/api/get_weather_by_city?query=cityname
 
 
-
-
+# delete the data in the casssandra database by city
+```
+curl -i -H "Content-Type: application/json" -X DELETE -d '{"query":"shanghai"}' http://localhost:8080/delete_by_city
+```
 
 
 
