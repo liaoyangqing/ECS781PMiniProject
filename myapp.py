@@ -63,6 +63,20 @@ def get_weather_by_city():
     else:
         return jsonify({'error': resp.reason}), 404  # if failure in requests, return 404
 
+@app.route('/delete_by_city', methods=['DELETE'])
+def delete_by_city():
+    if not request.json or not 'query' in request.json or not 'date':
+        return jsonify({'error':'no enouph input'}),200
+    city = request.json['query']
+    count = 0
+    rows = session.execute("""Select * from cityweather.globe WHERE city = '{}'""".format(city))
+    for r in rows:
+        count = count + 1
+    if count == 0:
+        return jsonify({'error':'no such data exists'})
+    else:
+        session.execute("""DELETE FROM cityweather.globe WHERE city= '{}'""".format(city))
+        return jsonify({'success':'deleted'})    
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
